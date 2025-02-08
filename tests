@@ -1,0 +1,11 @@
+slm-book-qa/
+├── data/
+│   └── books/         # Store book texts here
+├── src/
+│   ├── preprocessing/ # Text preprocessing modules
+│   ├── model/        # Model architecture
+│   ├── utils/        # Helper functions
+│   └── train.py      # Training script
+├── tests/            # Unit tests
+├── requirements.txt  # Dependencies
+└── README.md         # Documentation
