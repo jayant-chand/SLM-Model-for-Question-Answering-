@@ -42,6 +42,7 @@ slm-book-qa/
 ```bash
 git clone https://github.com/yourusername/slm-book-qa.git
 cd slm-book-qa
+
 ```
 
 2. Create a virtual environment (recommended):
