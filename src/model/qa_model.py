@@ -40,3 +40,29 @@ class QAModel(nn.Module):
         answer = tokenizer.decode(answer_tokens)
         
         return answer
+
+    def get_answer_with_score(self, start_logits, end_logits, input_ids, tokenizer):
+        # Convert logits to probabilities
+        start_probs = torch.nn.functional.softmax(start_logits, dim=-1)
+        end_probs = torch.nn.functional.softmax(end_logits, dim=-1)
+        
+        # Get the most likely start and end positions
+        start_idx = torch.argmax(start_probs)
+        end_idx = torch.argmax(end_probs)
+        
+        # Ensure end comes after start
+        if end_idx < start_idx:
+            end_idx = start_idx + 1
+        
+        # Get the confidence score (probability product)
+        score = float(start_probs[0][start_idx] * end_probs[0][end_idx])
+        
+        # Convert token indices to text
+        tokens = tokenizer.convert_ids_to_tokens(input_ids[0][start_idx:end_idx + 1])
+        answer = tokenizer.convert_tokens_to_string(tokens)
+        
+        # Clean up the answer
+        answer = answer.strip()
+        answer = ' '.join(answer.split())
+        
+        return answer, score
