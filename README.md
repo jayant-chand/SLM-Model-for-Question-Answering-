@@ -40,7 +40,7 @@ slm-book-qa/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/slm-book-qa.git
+git clone https://github.com/jayant-chand/SLM-Model-for-Question-Answering-.git
 cd slm-book-qa
 
 ```
@@ -196,5 +196,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - your.email@example.com
-Project Link: https://github.com/yourusername/slm-book-qa
+Your Name - jayantcahnd2379@gmail.com
+Project Link: https://github.com/jayant-chand/SLM-Model-for-Question-Answering-.git
